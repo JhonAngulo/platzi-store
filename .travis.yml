@@ -1,12 +1,13 @@
 language: node_js
+node_js:
+  - '12'
 cache: 
+  yarn: true
   directories:
     - node_modules
     - ~/.npm
-node_js:
-  - '12'
-git:
-  depth: 3
+# git:
+#   depth: 3
 script:
   - yarn build
 deploy:
@@ -14,7 +15,7 @@ deploy:
   cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: true
-  local_dir: dist/
+  local_dir: dist
   target_branch: gh-pages
   commit_message: "Deploy de proyecto"
   on:
