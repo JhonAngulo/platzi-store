@@ -10,10 +10,9 @@ git:
 script:
   - yarn build
 deploy:
-  provider: pages:git
-  token: $GITHUB_TOKEN
-  edge: true
+  provider: pages
   cleanup: true
+  github_token: $GITHUB_TOKEN
   keep_history: true
   local_dir: dist/
   target_branch: gh-pages
